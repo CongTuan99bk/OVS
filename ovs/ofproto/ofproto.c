@@ -1932,6 +1932,7 @@ void abnormal_detect(struct ofproto *p)
           if (p->lof_status > p->lof_threshold && reported == false)
               {
                  trigger_send_anomaly_detection(p);
+                 reported = true;
                 // gettimeofday(&end, NULL);
                 //     gettimeofday(&start, NULL); 
                  // fp=fopen("/home/lctuan/LoOP/time.log","a+");
@@ -2048,7 +2049,7 @@ ofproto_run(struct ofproto *p)
     }
     connmgr_run(p->connmgr, handle_openflow);
     abnormal_detect(p);    
-   //trigger_send_anomaly_detection(p); //phat ban tin bao bat thuong (debug)
+    //trigger_send_anomaly_detection(p); //phat ban tin bao bat thuong (debug)
     return error;
 }
 

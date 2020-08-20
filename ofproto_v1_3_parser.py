@@ -2283,7 +2283,7 @@ class OFPPacketIn(MsgBase):
 
     The switch sends the packet that received to the controller by this
     message.
-
+in
     ============= =========================================================
     Attribute     Description
     ============= =========================================================
